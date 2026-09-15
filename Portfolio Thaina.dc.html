@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"></rect><text x="50" y="62" font-family="Georgia, serif" font-size="30" fill="#ffffff" text-anchor="middle">TC</text></svg></template>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #ffffff; color: #1a1a1a; -webkit-font-smoothing: antialiased; }
+  a { color: #1a1a1a; text-decoration: none; transition: opacity .3s ease; }
+  a:hover { opacity: .6; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes bounceY { 0%,100% { transform: translateY(0); opacity: .5; } 50% { transform: translateY(7px); opacity: 1; } }
+  @keyframes logoPulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.04); opacity: .82; } }
+  @keyframes fadeInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: none; } }
+  @keyframes bounceArrow { 0%,100% { transform: rotate(-45deg) translate(0,0); opacity: .7; } 50% { transform: rotate(-45deg) translate(6px,6px); opacity: 1; } }
+  @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes slideInLeft { from { opacity: 0; transform: translateX(-32px); } to { opacity: 1; transform: none; } }
+  @keyframes fadeInScaleUp { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+<div style="font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif; background: #ffffff; color: #1a1a1a; min-height: 100%;">
+
+  <header style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px clamp(24px,4vw,48px); background: {{ headerBg }}; box-shadow: {{ headerShadow }}; backdrop-filter: blur(12px); border-bottom: 1px solid #e8e8e8; animation: slideDown .6s ease-out both; transition: background .3s ease, box-shadow .3s ease;">
+    <div style="display: flex; align-items: center; gap: 22px; min-width: 0;">
+      <a href="#" onClick="{{ goHome }}" style="font-size: 18px; font-weight: 700; letter-spacing: -.02em; cursor: pointer; animation: logoPulse 3s ease-in-out infinite;">THAINÁ</a>
+      <sc-if value="{{ isProject }}" hint-placeholder-val="{{ false }}">
+        <a href="#" onClick="{{ goWork }}" style="font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #999; background: #f5f5f5; padding: 8px 16px; border-radius: 20px; cursor: pointer; white-space: nowrap; flex-shrink: 0; animation: slideInLeft .5s ease-out both; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;opacity:1">← All work</a>
+      </sc-if>
+    </div>
+    <div style="display: flex; align-items: center; gap: clamp(16px,3vw,34px);">
+      <nav style="display: flex; gap: clamp(16px,3vw,34px); font-size: 14px; font-weight: 500;">
+        <a href="#" onClick="{{ goWork }}" style="cursor: pointer; padding-bottom: 3px; border-bottom: 1px solid transparent; transition: all .3s ease;" style-hover="border-bottom-color:#1a1a1a;opacity:1">Work</a>
+        <a href="#" onClick="{{ goAbout }}" style="cursor: pointer; padding-bottom: 3px; border-bottom: 1px solid transparent; transition: all .3s ease;" style-hover="border-bottom-color:#1a1a1a;opacity:1">About</a>
+        <a href="#" onClick="{{ goContact }}" style="cursor: pointer; padding-bottom: 3px; border-bottom: 1px solid transparent; transition: all .3s ease;" style-hover="border-bottom-color:#1a1a1a;opacity:1">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div key="home">
+    <section style="position: relative; width: 100%; height: calc(100vh - 61px); min-height: 560px; overflow: hidden; background: #101010; display: flex; align-items: center; justify-content: center;">
+      <video src="uploads/hf_20260824_173836_532e0c96-6549-4144-ae4c-96530f1a30e2-bbd30df7.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></video>
+      <div style="position: absolute; inset: 0; background: rgba(0,0,0,.55);"></div>
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.1) 45%, rgba(0,0,0,.35) 100%);"></div>
+
+      <div style="position: relative; z-index: 10; text-align: center; padding: 0 clamp(24px,4vw,48px); max-width: 900px;">
+        <h1 style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(44px,7vw,84px); line-height: 1.05; letter-spacing: -.02em; color: #fff; margin: 0 0 26px; animation: fadeUp .8s ease-out .3s both;">Thainá Carvalho</h1>
+        <p style="font-size: clamp(18px,2.2vw,24px); font-weight: 400; color: rgba(255,255,255,.9); line-height: 1.4; margin: 0 0 12px; max-width: 700px; margin-inline: auto; animation: fadeUp .8s ease-out .5s both;">Especialista em Design Visual Estratégico</p>
+        <p style="font-size: clamp(16px,1.8vw,20px); font-weight: 300; color: rgba(255,255,255,.75); line-height: 1.5; margin: 0; max-width: 600px; margin-inline: auto; animation: fadeUp .8s ease-out .7s both;">Alinhado à Inteligência Artificial</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: clamp(38px,5vw,60px); animation: fadeInScaleUp .8s ease-out .9s both;">
+          <a href="#" onClick="{{ goWork }}" style="display: inline-flex; align-items: center; padding: 14px 40px; background: rgba(255,255,255,.95); color: #1a1a1a; font-size: 14px; font-weight: 600; border-radius: 2px; cursor: pointer; transition: all .3s ease;" style-hover="background:#ffffff;transform:scale(1.05);box-shadow:0 10px 40px rgba(0,0,0,.35);opacity:1">Ver trabalhos</a>
+          <a href="#" onClick="{{ goContact }}" style="display: inline-flex; align-items: center; padding: 12px 38px; background: transparent; color: #fff; font-size: 14px; font-weight: 600; border: 2px solid #fff; border-radius: 2px; cursor: pointer; transition: all .3s ease;" style-hover="background:#ffffff;color:#1a1a1a;transform:scale(1.05);opacity:1">Contato</a>
+        </div>
+      </div>
+
+      <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 20; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+        <span style="font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.7);">Scroll</span>
+        <span style="display: block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,.7); border-top: none; border-left: none; animation: bounceArrow 2s ease-in-out infinite;"></span>
+      </div>
+    </section>
+
+    <section id="work" style="max-width: 1280px; margin: 0 auto; padding: clamp(72px,9vw,120px) clamp(24px,4vw,48px);">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #999; margin-bottom: 52px; padding-bottom: 20px; border-bottom: 1px solid #e8e8e8; animation: slideInLeft .6s ease-out both;">Trabalhos</div>
+      <div style="display: flex; gap: 12px; margin-bottom: clamp(40px,5vw,60px); overflow-x: auto; padding-bottom: 4px; align-items: center;">
+        <sc-for list="{{ categories }}" as="c" hint-placeholder-count="4">
+          <a href="#" onClick="{{ c.pick }}" style="flex-shrink: 0; white-space: nowrap; padding: 11px 24px; border-radius: 20px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; background: {{ c.bg }}; color: {{ c.fg }}; border: 1px solid {{ c.bc }}; transition: all .3s ease;" style-hover="opacity:.8;transform:scale(1.04)">{{ c.label }}</a>
+        </sc-for>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(36px,4vw,56px);">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="10">
+          <div onClick="{{ p.open }}" style="cursor: pointer; transition: all .3s ease; animation: fadeInScaleUp .6s ease-out both; animation-delay: {{ p.delay }};" style-hover="transform:translateY(-8px);opacity:.92">
+            <div style="position: relative; aspect-ratio: 16/9; width: 100%; background: #1a1a1a; border-radius: 4px; overflow: hidden; margin-bottom: 18px;">
+              <sc-if value="{{ p.hasCover }}" hint-placeholder-val="{{ false }}">
+                <div role="img" aria-label="{{ p.title }}" style="position: absolute; inset: 0; background-image: {{ p.coverBg }}; background-size: cover; background-position: center;"></div>
+              </sc-if>
+              <sc-if value="{{ p.hasCoverVid }}" hint-placeholder-val="{{ false }}">
+                <video data-src="{{ p.cover }}" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; background: #0d0d0d;"></video>
+              </sc-if>
+              <sc-if value="{{ p.noCover }}" hint-placeholder-val="{{ true }}">
+                <div style="position: absolute; inset: 0; background: repeating-linear-gradient(135deg,#232323 0 12px,#1c1c1c 12px 24px);"></div>
+                <span style="position: absolute; left: 18px; bottom: 16px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: #7a7a7a;">{{ p.video }}</span>
+                <span style="position: absolute; right: 16px; top: 14px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #7a7a7a;">Vídeo · loop</span>
+              </sc-if>
+              <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0); opacity: 0; transition: all .3s ease;" style-hover="background:rgba(0,0,0,.3);opacity:1">
+                <span style="color: #fff; font-size: 34px; line-height: 1;">▶</span>
+              </div>
+            </div>
+            <div style="font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #999; margin-bottom: 9px;">{{ p.category }}</div>
+            <div style="font-size: 22px; font-weight: 700; letter-spacing: -.01em; transition: all .3s ease;" style-hover="text-decoration:underline">{{ p.title }}</div>
+            <div style="font-size: 12px; color: #999; margin-top: 5px;">{{ p.year }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top: clamp(44px,5vw,64px); text-align: center;">
+        <a href="#" onClick="{{ goContact }}" style="font-size: 14px; font-weight: 600; border-bottom: 1px solid #d8d8d8; padding-bottom: 3px; cursor: pointer; display: inline-block; transition: all .3s ease;" style-hover="opacity:.6;transform:translateX(4px)">Ver todos os trabalhos →</a>
+      </div>
+    </section>
+
+    <section style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,4vw,48px) clamp(72px,9vw,120px); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(40px,5vw,80px); align-items: start;">
+      <div>
+        <h2 style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(30px,3.5vw,38px); line-height: 1.2; margin: 0 0 28px; animation: slideInLeft .6s ease-out both;">Sobre</h2>
+        <div style="display: flex; flex-direction: column; gap: 18px; max-width: 520px;">
+          <p style="font-size: 16px; line-height: 1.75; color: #666; margin: 0; text-wrap: pretty;">Designer com mais de 6 anos de experiência criando soluções visuais que vão além do esperado.</p>
+          <p style="font-size: 16px; line-height: 1.75; color: #666; margin: 0; text-wrap: pretty;">Meu trabalho combina estratégia, design e inovação com inteligência artificial, trazendo uma visão diferente para cada projeto.</p>
+          <p style="font-size: 16px; line-height: 1.75; color: #666; margin: 0; text-wrap: pretty;">Trabalho com brands que querem se destacar, criando desde identidades visuais até conteúdo estratégico para redes sociais e campanhas digitais.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; max-width: 520px;">
+          <span style="padding: 10px 18px; border: 1px solid #e8e8e8; border-radius: 20px; font-size: 13px; color: #666; background: #fff; cursor: pointer; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;border-color:#1a1a1a;transform:scale(1.05)">Branding</span>
+          <span style="padding: 10px 18px; border: 1px solid #e8e8e8; border-radius: 20px; font-size: 13px; color: #666; background: #fff; cursor: pointer; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;border-color:#1a1a1a;transform:scale(1.05)">Design Estratégico</span>
+          <span style="padding: 10px 18px; border: 1px solid #e8e8e8; border-radius: 20px; font-size: 13px; color: #666; background: #fff; cursor: pointer; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;border-color:#1a1a1a;transform:scale(1.05)">Conteúdo Visual</span>
+          <span style="padding: 10px 18px; border: 1px solid #e8e8e8; border-radius: 20px; font-size: 13px; color: #666; background: #fff; cursor: pointer; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;border-color:#1a1a1a;transform:scale(1.05)">IA Generativa</span>
+          <span style="padding: 10px 18px; border: 1px solid #e8e8e8; border-radius: 20px; font-size: 13px; color: #666; background: #fff; cursor: pointer; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;border-color:#1a1a1a;transform:scale(1.05)">Beauty &amp; Wellness</span>
+          <span style="padding: 10px 18px; border: 1px solid #e8e8e8; border-radius: 20px; font-size: 13px; color: #666; background: #fff; cursor: pointer; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;border-color:#1a1a1a;transform:scale(1.05)">Food Design</span>
+        </div>
+        <div style="margin-top: 34px;">
+          <a href="#" onClick="{{ goAbout }}" style="font-size: 14px; border-bottom: 1px solid #d8d8d8; padding-bottom: 3px; cursor: pointer;">Ler mais sobre mim</a>
+        </div>
+      </div>
+      <div style="aspect-ratio: 3/4; width: 100%; min-width: 0; background: url('uploads/1754509411573.jpeg') center/cover no-repeat; border: 1px solid #e8e8e8; border-radius: 4px; display: flex; align-items: flex-end; padding: 18px; box-sizing: border-box; animation: fadeInRight .6s ease-out .2s both; transition: all .4s ease;" style-hover="box-shadow:0 20px 60px rgba(0,0,0,.1);transform:scale(1.02)">
+      </div>
+    </section>
+
+    <section style="max-width: 1280px; margin: 0 auto clamp(72px,9vw,120px); background: #f0f0f0; border-radius: 4px; padding: clamp(72px,9vw,120px) clamp(24px,4vw,48px);">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h2 style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px,4.2vw,46px); line-height: 1.15; margin: 0 auto 24px; letter-spacing: -.02em;">Vamos trabalhar juntos?</h2>
+        <p style="font-size: 17px; line-height: 1.65; color: #666; max-width: 600px; margin: 0 auto 44px; text-wrap: pretty;">Tenho interesse em novos projetos que explorem criatividade e estratégia visual. Vamos conversar?</p>
+        <a href="https://api.whatsapp.com/send?phone=5521998261893" target="_blank" rel="noopener" style="display: inline-flex; padding: 14px 32px; background: #1a1a1a; color: #fff; font-size: 15px; font-weight: 600; border-radius: 2px; border: 2px solid #1a1a1a; transition: all .3s ease;" style-hover="background:#ffffff;color:#1a1a1a;transform:scale(1.05);box-shadow:0 10px 30px rgba(0,0,0,.1);opacity:1">Enviar mensagem</a>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+  <section key="about" style="max-width: 1280px; margin: 0 auto; padding: clamp(56px,7vw,96px) clamp(24px,4vw,48px) clamp(72px,9vw,120px); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(40px,5vw,80px); align-items: start; animation: fadeUp .5s ease both;">
+    <div>
+      <h1 style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(34px,4.5vw,46px); line-height: 1.15; margin: 0 0 26px;">Sobre</h1>
+      <div style="display: flex; flex-direction: column; gap: 20px; max-width: 520px;">
+        <p style="font-size: 16px; line-height: 1.8; color: #666; margin: 0; text-wrap: pretty;">Sou Thainá Carvalho, designer e estrategista visual baseada no Rio de Janeiro. Há mais de 6 anos construo identidades e conteúdo para marcas de beauty, wellness e food.</p>
+        <p style="font-size: 16px; line-height: 1.8; color: #666; margin: 0; text-wrap: pretty;">Meu trabalho começa na estratégia: entender o posicionamento antes de desenhar qualquer coisa. O visual é consequência de uma decisão de negócio, não de gosto.</p>
+        <p style="font-size: 16px; line-height: 1.8; color: #666; margin: 0; text-wrap: pretty;">Uso IA generativa como ferramenta de direção de arte — não como atalho. Cada prompt é testado, refinado e integrado a um sistema visual coerente.</p>
+        <p style="font-size: 16px; line-height: 1.8; color: #666; margin: 0; text-wrap: pretty;">Trabalho de ponta a ponta: marca, sistema visual, direção de conteúdo, packaging e aplicações digitais.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; max-width: 520px;">
+        <span style="padding: 10px 18px; border: 1px solid #e8e8e8; border-radius: 20px; font-size: 13px; color: #666; background: #fff; cursor: pointer; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;border-color:#1a1a1a;transform:scale(1.05)">Branding</span>
+        <span style="padding: 10px 18px; border: 1px solid #e8e8e8; border-radius: 20px; font-size: 13px; color: #666; background: #fff; cursor: pointer; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;border-color:#1a1a1a;transform:scale(1.05)">Design Estratégico</span>
+        <span style="padding: 10px 18px; border: 1px solid #e8e8e8; border-radius: 20px; font-size: 13px; color: #666; background: #fff; cursor: pointer; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;border-color:#1a1a1a;transform:scale(1.05)">Conteúdo Visual</span>
+        <span style="padding: 10px 18px; border: 1px solid #e8e8e8; border-radius: 20px; font-size: 13px; color: #666; background: #fff; cursor: pointer; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;border-color:#1a1a1a;transform:scale(1.05)">IA Generativa</span>
+        <span style="padding: 10px 18px; border: 1px solid #e8e8e8; border-radius: 20px; font-size: 13px; color: #666; background: #fff; cursor: pointer; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;border-color:#1a1a1a;transform:scale(1.05)">Beauty &amp; Wellness</span>
+        <span style="padding: 10px 18px; border: 1px solid #e8e8e8; border-radius: 20px; font-size: 13px; color: #666; background: #fff; cursor: pointer; transition: all .3s ease;" style-hover="background:#1a1a1a;color:#ffffff;border-color:#1a1a1a;transform:scale(1.05)">Food Design</span>
+      </div>
+    </div>
+    <div style="aspect-ratio: 3/4; width: 100%; min-width: 0; background: url('uploads/1754509411573.jpeg') center/cover no-repeat; border: 1px solid #e8e8e8; border-radius: 4px; display: flex; align-items: flex-end; padding: 18px; box-sizing: border-box; animation: fadeInRight .6s ease-out .2s both; transition: all .4s ease;" style-hover="box-shadow:0 20px 60px rgba(0,0,0,.1);transform:scale(1.02)">
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <section key="contact" style="max-width: 820px; margin: 0 auto; padding: clamp(72px,10vw,140px) clamp(24px,4vw,48px) clamp(72px,9vw,120px); animation: fadeUp .5s ease both;">
+    <h1 style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(36px,5vw,54px); line-height: 1.12; margin: 0 0 24px; max-width: 16ch;">Vamos trabalhar juntos?</h1>
+    <p style="font-size: 18px; line-height: 1.65; color: #666; max-width: 600px; margin: 0 0 46px; text-wrap: pretty;">Tenho interesse em novos projetos que explorem criatividade e estratégia visual. Vamos conversar?</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 28px; padding-top: 40px; border-top: 1px solid #e8e8e8;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #999;">E-mail</div>
+        <a href="mailto:thai.carvalhob@gmail.com" style="font-size: 16px;">thai.carvalhob@gmail.com</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #999;">Social</div>
+        <a href="https://www.instagram.com/thainadesign_/" target="_blank" rel="noopener" style="font-size: 16px;">@thainadesign_</a>
+        <a href="https://www.linkedin.com/in/thainacarvalhob/" target="_blank" rel="noopener" style="font-size: 16px;">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ isProject }}" hint-placeholder-val="{{ false }}">
+  <div key="project" style="animation: fadeUp .5s ease both;">
+    <section style="max-width: 1280px; margin: 0 auto; padding: clamp(48px,6vw,80px) clamp(24px,4vw,48px) 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: clamp(40px,5vw,80px); align-items: start;">
+      <div style="min-width: 0;">
+        <div style="font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #999; margin-bottom: 16px;">{{ current.category }}</div>
+        <h1 style="font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(34px,4.6vw,50px); line-height: 1.15; letter-spacing: -.01em; margin: 0 0 30px; max-width: 16ch;">{{ current.title }}</h1>
+        <div style="display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin-bottom: 44px;">
+          <sc-for list="{{ current.body }}" as="para" hint-placeholder-count="3">
+            <p style="font-size: 16px; line-height: 1.8; color: #666; margin: 0; text-wrap: pretty;">{{ para }}</p>
+          </sc-for>
+        </div>
+        <div style="padding-top: 36px; border-top: 1px solid #e8e8e8; display: flex; flex-direction: column; gap: 20px;">
+          <sc-for list="{{ current.meta }}" as="m" hint-placeholder-count="5">
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #999; margin-bottom: 5px;">{{ m.label }}</div>
+              <div style="font-size: 16px;">{{ m.value }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="min-width: 0;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; max-width: 600px; align-items: start;">
+          <sc-for list="{{ current.media }}" as="m" hint-placeholder-count="6">
+            <div style="position: relative; width: 100%; aspect-ratio: {{ m.ratio }}; min-width: 0; border-radius: 8px; overflow: hidden; background: #101010; box-shadow: 0 2px 8px rgba(0,0,0,.1); animation: fadeUp .6s ease-out both; animation-delay: {{ m.delay }}; transition: transform .3s ease, box-shadow .3s ease;" style-hover="transform:scale(1.02);box-shadow:0 8px 20px rgba(0,0,0,.15)">
+              <sc-if value="{{ m.isImg }}" hint-placeholder-val="{{ false }}">
+                <div role="img" aria-label="{{ m.file }}" style="position: absolute; inset: 0; background-image: {{ m.bg }}; background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+              </sc-if>
+              <sc-if value="{{ m.isVid }}" hint-placeholder-val="{{ false }}">
+                <video data-src="{{ m.src }}" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></video>
+              </sc-if>
+              <sc-if value="{{ m.noSrc }}" hint-placeholder-val="{{ true }}">
+                <div style="position: absolute; inset: 0; background: repeating-linear-gradient(135deg,#1e1e1e 0 12px,#161616 12px 24px);"></div>
+                <span style="position: absolute; left: 14px; bottom: 14px; right: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; line-height: 1.4; color: #7a7a7a; word-break: break-all;">{{ m.file }}</span>
+                <span style="position: absolute; right: 12px; top: 12px; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #7a7a7a;">{{ m.kind }}</span>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,4vw,48px) clamp(64px,8vw,110px);">
+      <div style="margin-top: clamp(72px,9vw,120px); padding-top: 44px; border-top: 1px solid #e8e8e8; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+        <a href="#" onClick="{{ goPrev }}" style="display: flex; flex-direction: column; gap: 8px; cursor: pointer; transition: all .3s ease;" style-hover="transform:translateX(-8px);opacity:1">
+          <span style="font-size: 14px; font-weight: 600; color: #999;">← Projeto Anterior</span>
+          <span style="font-size: 17px; font-weight: 600;">{{ prevTitle }}</span>
+        </a>
+        <a href="#" onClick="{{ goNext }}" style="display: flex; flex-direction: column; gap: 8px; text-align: right; cursor: pointer; transition: all .3s ease;" style-hover="transform:translateX(8px);opacity:1">
+          <span style="font-size: 14px; font-weight: 600; color: #999;">Próximo Projeto →</span>
+          <span style="font-size: 17px; font-weight: 600;">{{ nextTitle }}</span>
+        </a>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <footer style="border-top: 1px solid #e8e8e8; padding: 60px clamp(24px,4vw,48px);">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: clamp(40px,5vw,64px);">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #999; margin-bottom: 4px;">Contato</div>
+        <a href="mailto:thai.carvalhob@gmail.com" style="font-size: 16px; transition: all .3s ease;" style-hover="opacity:.6;transform:translateX(4px)">thai.carvalhob@gmail.com</a>
+        <a href="https://www.instagram.com/thainadesign_/" target="_blank" rel="noopener" style="font-size: 16px; transition: all .3s ease;" style-hover="opacity:.6;transform:translateX(4px)">Instagram</a>
+        <a href="https://www.linkedin.com/in/thainacarvalhob/" target="_blank" rel="noopener" style="font-size: 16px; transition: all .3s ease;" style-hover="opacity:.6;transform:translateX(4px)">LinkedIn</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #999; margin-bottom: 4px;">Localização</div>
+        <div style="font-size: 14px;">Rio de Janeiro, Brasil</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #999; margin-bottom: 4px;">Créditos</div>
+        <div style="font-size: 14px; color: #666;">Design estratégico com IA generativa</div>
+        <div style="font-size: 14px; color: #666;">2026</div>
+      </div>
+    </div>
+    <div style="max-width: 1280px; margin: 44px auto 0; padding-top: 32px; border-top: 1px solid #e8e8e8; text-align: center; font-size: 12px; color: #999;">© 2026 Thainá Carvalho. Todos os direitos reservados. | Design estratégico com IA generativa.</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000}}">
+const CATEGORIES = ["TUDO", "CAMPANHAS", "CONTEÚDO DE MARCA", "PRODUÇÃO VISUAL COM IA"];
+
+const PROJECTS = [
+  {
+    slug: "dermage-id-bags", title: "Dermage + ID Bags",
+    cover: "uploads/capa.mp4",
+    cats: ["CONTEÚDO DE MARCA"],
+    category: "CONTEÚDO DE MARCA", year: "2026",
+    video: "dermage-id-bags-capa.mp4",
+    body: [
+      "Produção visual completa para posts de colaboração entre Dermage e ID Bags — projeto que acompanhei desde a concepção até o lançamento.",
+      "",
+      "A construção da parceria, desenvolvimento dos pilotos e storytelling da collab foram processos estratégicos. Mas a execução visual era essencial: escolher ângulos que comunicassem a fusão entre proteção solar, funcionalidade, design e lifestyle de forma clara e impactante.",
+      "",
+      "Todo o ensaio fotográfico para os posts da collab foi desenvolvido com IA — material otimizado por plataforma, cada ângulo pensado para maximizar o impacto visual. Resultado: uma campanha visual coesa que transmite sofisticação e pertinência da parceria."
+    ],
+    meta: [
+      { label: "Category", value: "Conteúdo de Marca" },
+      { label: "Client", value: "Dermage + ID Bags" },
+      { label: "Type", value: "Produção com IA" },
+      { label: "Year", value: "2026" },
+      { label: "Credits", value: "Art Direction, AI Production, Design" }
+    ],
+    media: [
+      { src: "uploads/050926_Dermage%2BIDBags_01.mp4", file: "050926_Dermage+IDBags_01.mp4", ratio: "1080/1350", kind: "Vídeo" },
+      { src: "uploads/050926_Dermage%2BIDBags_02.png", file: "050926_Dermage+IDBags_02.png", ratio: "1080/1350", kind: "Imagem" },
+      { src: "uploads/050926_Dermage%2BIDBags_03.mp4", file: "050926_Dermage+IDBags_03.mp4", ratio: "1080/1350", kind: "Vídeo" },
+      { src: "uploads/050926_Dermage%2BIDBags_04.png", file: "050926_Dermage+IDBags_04.png", ratio: "1080/1350", kind: "Imagem" },
+      { src: "uploads/050926_Dermage%2BIDBags_05.mp4", file: "050926_Dermage+IDBags_05.mp4", ratio: "1080/1350", kind: "Vídeo" }
+    ]
+  },
+  {
+    slug: "photoage-water-gold", title: "Photoage Water Gold",
+    cover: "uploads/Sem%20Ti%CC%81tulo.mp4",
+    cats: ["PRODUÇÃO VISUAL COM IA","CONTEÚDO DE MARCA"],
+    category: "PRODUÇÃO VISUAL COM IA · CONTEÚDO DE MARCA", year: "2026",
+    video: "photoage-water-gold-capa.mp4",
+    body: [
+      "Desenvolvimento de comunicação visual digital para Photoage Water Gold, protetor com tecnologia avançada (FPS 50, textura ultrafluida, resistência à água/suor, ativos hidratantes e seborreguladoras).",
+      "",
+      "A estratégia centralizou a textura do produto como narrativa visual principal. Ao invés de apenas mencionar a fluidez, ela virou o protagonista em cada material — em macro, em movimento, em luz. Essa escolha posicionou o produto não como “mais um protetor”, mas como sofisticação funcional.",
+      "",
+      "A campanha equilibrou clareza de proteção solar com elegância visual, comunicando tecnologia através da sensorialidade."
+    ],
+    meta: [
+      { label: "Category", value: "Produção Visual com IA · Conteúdo de Marca" },
+      { label: "Client", value: "Dermage" },
+      { label: "Type", value: "Campanha Digital, Produção Visual com IA" },
+      { label: "Year", value: "2026" },
+      { label: "Credits", value: "Art Direction, AI Production, Motion" }
+    ],
+    media: [
+      { src: "uploads/010926_Lanc%CC%A7amento_water-gold%20(2).mp4", file: "010926_Lançamento_water-gold (2).mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/300826_SpoilerWaterGoldTrend.mp4", file: "300826_SpoilerWaterGoldTrend.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/280826%20STORY%20E%CC%81%20AMANHA%CC%83%20LIVE%20PHOTOAGE%20WATER%20GOLD.mp4", file: "280826 STORY É AMANHÃ LIVE PHOTOAGE WATER GOLD.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/310826_SpoilerWaterGold.mp4", file: "310826_SpoilerWaterGold.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/260826_ADS2_PHOTOAGE_WATER_GOLD_STORY.png", file: "260826_ADS2_PHOTOAGE_WATER_GOLD_STORY.png", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/270826_ADS3_PHOTOAGE_WATER_GOLD_STORY.png", file: "270826_ADS3_PHOTOAGE_WATER_GOLD_STORY.png", ratio: "9/16", kind: "Imagem" }
+    ],
+    quote: "“A textura vendeu o produto antes do texto.”"
+  },
+  {
+    slug: "ads-performance", title: "Ads Performance",
+    cats: ["PRODUÇÃO VISUAL COM IA"],
+    category: "PRODUÇÃO VISUAL COM IA", year: "2026",
+    video: "ads-performance-capa.mp4",
+    cover: "uploads/Sem%20Ti%CC%81tulo-1.mp4",
+    body: [
+      "Criação e produção de materiais visuais para campanhas de publicidade digital. Imagens e vídeos concebidos e desenvolvidos com inteligência artificial, explorando composições e ângulos além do convencional.",
+      "O trabalho prioriza diferenciação visual dentro de identidade de marca consistente. Cada criativo é uma exploração de possibilidade estética — construído para destacar-se, performar e comunicar com precisão."
+    ],
+    meta: [
+      { label: "Category", value: "Produção Visual com IA" },
+      { label: "Client", value: "Dermage" },
+      { label: "Type", value: "Criativos de Performance, Produção com IA" },
+      { label: "Year", value: "2026" },
+      { label: "Credits", value: "Art Direction, AI Production, Design" }
+    ],
+    media: [
+      { src: "uploads/160726_ADS5-STICK_STORY.mp4", file: "160726_ADS5-STICK_STORY.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/040826_ADS3-GANHE_AMOSTRAS_HIDRACARE_STORY-23ae490b.mp4", file: "040826_ADS3-GANHE_AMOSTRAS_HIDRACARE_STORY.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/040826_ADS_IMPROVE-C-20_STORY%20(1)%20(1).mp4", file: "040826_ADS_IMPROVE-C-20_STORY (1).mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/042826_ADS_CLARITE%CC%81-CORPORAL_STORY%20(1)-0990ca9b.mp4", file: "042826_ADS_CLARITÉ-CORPORAL_STORY (1).mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/120826_ADS3_GANHE_MINI_CAPILAR_STORY-7885e7e1.mp4", file: "120826_ADS3_GANHE_MINI_CAPILAR_STORY.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/250626_ADS3_PROMO-STICK-15OFF_Story.mp4", file: "250626_ADS3_PROMO-STICK-15OFF_Story.mp4", ratio: "9/16", kind: "Vídeo" }
+    ],
+    quote: "“Criativo no ritmo que a plataforma pede.”"
+  },
+  {
+    slug: "dermage-hidracre", title: "Linha Hidracare",
+    cover: "uploads/magnific_drama-85mm-00000003dermag_Vd9WOhvMMU.mp4",
+    cats: ["PRODUÇÃO VISUAL COM IA","CONTEÚDO DE MARCA"],
+    category: "PRODUÇÃO VISUAL COM IA · CONTEÚDO DE MARCA", year: "2024",
+    video: "dermage-hidracre-capa.mp4",
+    body: [
+      "Desenvolvimento de comunicação visual digital para Linha Hidracre, utilizando IA para produção de imagem estratégica.",
+      "",
+      "O produto prometia hidratação profunda — um benefício comum. A diferenciação veio do visual: textura, movimento de água, enquadramento repetível que funcionava em qualquer corte. Cada peça reforçava a mesma narrativa visual, criando reconhecimento imediato.",
+      "",
+      "Materiais desenvolvidos para social e mídia paga, otimizados por formato. Campanha coesa que sustentou o lançamento através de identidade visual clara."
+    ],
+    meta: [
+      { label: "Category", value: "Produção Visual com IA · Conteúdo de Marca" },
+      { label: "Client", value: "Dermage" },
+      { label: "Type", value: "Campanha Digital, Produção Visual com IA" },
+      { label: "Year", value: "2024" },
+      { label: "Credits", value: "Art Direction, AI Production, Design" }
+    ],
+    media: [
+      { src: "uploads/090726_ADS7_LINHA-HIDRACRE_STORY%201%20(1)-18460b5c.mp4", file: "090726_ADS7_LINHA-HIDRACRE_STORY 1 (1).mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/140726_TexturaHidracare.mp4", file: "140726_TexturaHidracare.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/090826_HidracareFarma%CC%81cias-e76e84be.mp4", file: "090826_HidracareFarmácias.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/150726_StoryLive%20E%CC%81Hoje.mp4", file: "150726_StoryLive ÉHoje.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/090726_ADS4_LINHA-HIDRACRE_STORY%201.png", file: "090726_ADS4_LINHA-HIDRACRE_STORY 1.png", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/060826_ADS2_HIDRACARE-IA_STORY%20(1)-6d3e41f3.mp4", file: "060826_ADS2_HIDRACARE-IA_STORY (1).mp4", ratio: "9/16", kind: "Vídeo" },
+      { file: "dermage-hidracre-video-3.mp4", kind: "Vídeo" },
+      { file: "dermage-hidracre-image-3.jpg", kind: "Imagem" }
+    ],
+    quote: "“Hidratação deixou de ser promessa e passou a ser imagem.”"
+  },
+  {
+    slug: "dermage-clarite", title: "Clarité Mela Repair",
+    cover: "uploads/Capa_Mela-Repair.png",
+    cats: ["PRODUÇÃO VISUAL COM IA","CONTEÚDO DE MARCA"],
+    category: "PRODUÇÃO VISUAL COM IA · CONTEÚDO DE MARCA", year: "2026",
+    video: "dermage-clarite-capa.mp4",
+    body: [
+      "O desafio era traduzir eficácia dermatológica em linguagem desejável sem perder credibilidade técnica. A solução foi visual — um sistema de antes/depois abstrato onde luz, sombra e superfície da pele contam a narrativa de transformação.",
+      "",
+      "Material digital completo para lançamento gerado com IA: imagens de campanha e vídeos de apresentação do produto. Cada frame reforçava a mesma mensagem: prova científica com beleza editorial. Resultado: campanha que convence porque mostra transformação real.",
+      "",
+      ""
+    ],
+    meta: [
+      { label: "Category", value: "Produção Visual com IA · Conteúdo de Marca" },
+      { label: "Client", value: "Dermage" },
+      { label: "Type", value: "Design Estratégico, Conteúdo Visual, Desenvolvimento de peças criativas com IA" },
+      { label: "Year", value: "2026" },
+      { label: "Credits", value: "Art Direction, AI Production, Retouch" }
+    ],
+    media: [
+      { src: "uploads/300626_ADS5_MELA_REPAIR_Story%201%20(1).mp4", file: "300626_ADS5_MELA_REPAIR_Story 1 (1).mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/300626_SpoilerMelaRepair.mp4", file: "300626_SpoilerMelaRepair.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/070726_MelaRepairStickColor_01.mp4", file: "070726_MelaRepair+StickColor_01.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/Sem%20Ti%CC%81tulo%202.mp4", file: "Sem Título 2.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/020726_StoryMelaRepair_07.png", file: "020726_StoryMelaRepair_07.png", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/070726_MelaRepair%2BStickColor_02-a9d0bd72.png", file: "070726_MelaRepair+StickColor_02.png", ratio: "9/16", kind: "Imagem" }
+    ],
+    quote: "“Clínico e desejável na mesma imagem.”"
+  },
+  {
+    slug: "dermage-melatonina", title: "Ineout Melatonina",
+    cover: "uploads/capa-melatonina.png",
+    cats: ["PRODUÇÃO VISUAL COM IA","CONTEÚDO DE MARCA"],
+    category: "PRODUÇÃO VISUAL COM IA · CONTEÚDO DE MARCA", year: "2026",
+    video: "dermage-melatonina-capa.mp4",
+    body: [
+      "Conteúdo visual digital com produção de imagens e vídeos gerados por IA, focado em performance.",
+      "O briefing pedia volume: variações suficientes para testar ângulos sem estourar orçamento de produção.",
+      "Montamos um pipeline de produção virtual — cenário, produto e luz controlados por prompt, com refino manual.",
+      "Foram entregues dezenas de variações mantendo consistência de marca em todas.",
+      "Custo por peça caiu e a velocidade de teste em ads aumentou de forma direta."
+    ],
+    meta: [
+      { label: "Category", value: "Produção Visual com IA · Conteúdo de Marca" },
+      { label: "Client", value: "Dermage" },
+      { label: "Type", value: "Produção Visual com IA, Performance" },
+      { label: "Year", value: "2026" },
+      { label: "Credits", value: "Art Direction, AI Production, Design" }
+    ],
+    media: [
+      { src: "uploads/160626_ReelsLanc%CC%A7amentoMelatonina.mp4", file: "160626_ReelsLançamentoMelatonina.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/150626_SpoilerMelatonina.mp4", file: "150626_SpoilerMelatonina.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/160726_ADS2_GANHE-TAPA-OLHO_STORY.mp4", file: "160726_ADS2_GANHE-TAPA-OLHO_STORY.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/300626-ADS2_20OFF_SITE_Story%201.mp4", file: "300626-ADS2_20OFF_SITE_Story 1.mp4", ratio: "9/16", kind: "Vídeo" }
+    ],
+    quote: "“Produção com IA não é atalho — é escala com controle.”"
+  },
+  {
+    slug: "la-linda", title: "Coleção Contorno",
+    cover: "uploads/Capa-contorno-lalinda.png",
+    cats: ["CAMPANHAS"],
+    category: "CAMPANHAS", year: "2026",
+    video: "la-linda-contorno-capa.mp4",
+    body: [
+      "Criação e produção visual para o lançamento da Coleção Contorno — do conceito estratégico até a entrega de campanha completa.",
+      "",
+      "Fotografia, vídeo e conceito visual desenvolvidos integralmente com IA generativa. Todo o ensaio foi estruturado para comunicar o DNA da coleção: sofisticação, detalhe que define, elegância no caimento.",
+      "",
+      "Cada imagem e cada frame contribuem para uma narrativa visual coesa que prepara e posiciona o lançamento com precisão. Produção ágil, exploração criativa em profundidade, impacto visual estratégico."
+    ],
+    meta: [
+      { label: "Category", value: "Campanhas" },
+      { label: "Client", value: "LA LINDA" },
+      { label: "Type", value: "Campanha, Identidade de Coleção" },
+      { label: "Year", value: "2026" },
+      { label: "Credits", value: "Art Direction, Brand Strategy, Design" }
+    ],
+    media: [
+      { src: "uploads/magnific_video-type-cinematic-cont_MXYXQJbDCm.mp4", file: "magnific_video-type-cinematic-cont_MXYXQJbDCm.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/brinco%20corazoin.png", file: "brinco corazoin.png", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/magnific_camera-arri-alexa-35-at-i_XtVI2LJBfo.png", file: "magnific_camera-arri-alexa-35-at-i_XtVI2LJBfo.png", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/Vi%CC%81deo_contorno-fotos.mp4", file: "Vídeo_contorno-fotos.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/e3a20b25-d93b-44e9-a037-f6b5f7e4911a.png", file: "e3a20b25-d93b-44e9-a037-f6b5f7e4911a.png", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/Anel_Duo-Prata.png", file: "Anel_Duo-Prata.png", ratio: "9/16", kind: "Imagem" }
+    ],
+    quote: "“Assinatura própria sem sair de casa.”"
+  },
+  {
+    slug: "kyds", title: "Lançamento \nYorgus Kyds",
+    cover: "uploads/01-a17ad04a.jpg",
+    cats: ["CONTEÚDO DE MARCA"],
+    category: "CONTEÚDO DE MARCA", year: "2026",
+    video: "kyds-characters-capa.mp4",
+    body: [
+      "O projeto foi desenvolvido para comunicar o rebranding da linha Yorgus Kyds, uma categoria de iogurte redesenhada com novos personagens e dois novos sabores. O desafio era criar conteúdo visual dinâmico e variações animadas dos novos personagens, garantindo coesão em múltiplos canais enquanto destacava a evolução da marca.\nA proposta central foi dar vida aos personagens renovados através de variações estratégicas de poses e sequências animadas com apoio de IA, enquanto integrava os novos designs de embalagem em todos os materiais de comunicação. As peças foram desenvolvidas para canais diversos (online e offline), enfatizando a diversão e o valor nutricional do produto, e reforçando o posicionamento renovado da marca.\n",
+      "",
+      "",
+      "",
+      ""
+    ],
+    meta: [
+      { label: "Category", value: "Conteúdo de Marca" },
+      { label: "Client", value: "Yorgus" },
+      { label: "Type", value: "Design Estratégico, Conteúdo Visual, Desenvolvimento de peças criativas com IA" },
+      { label: "Field", value: "Design Gráfico" },
+      { label: "Year", value: "2026" },
+      { label: "Credits", value: "Art Direction, Character Design, Design" }
+    ],
+    media: [
+      { src: "uploads/Vi%CC%81deo01.mp4", file: "Vídeo01.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/02.png", file: "02.png", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/03.png", file: "03.png", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/Vi%CC%81deo02-8f07b65a.mp4", file: "Vídeo02.mp4", ratio: "9/16", kind: "Vídeo" },
+    ],
+    behance: "https://www.behance.net/gallery/249667351/Lancamento-Yorgus-Kyds",
+    quote: "“Personagens consistentes o suficiente para virar ativo.”"
+  },
+  {
+    slug: "moo-skyr", title: "Lançamento \nMoo Skyr Desnatado",
+    cover: "uploads/Prancheta%201.jpg",
+    cats: ["CONTEÚDO DE MARCA"],
+    category: "CONTEÚDO DE MARCA", year: "2026",
+    video: "moo-skyr-capa.mp4",
+    body: [
+      "O projeto foi desenvolvido para apresentar o Moo Skyr Desnatado no mercado brasileiro como o primeiro iogurte tipo skyr fabricado no país, posicionando-o como uma alternativa super premium frente aos iogurtes convencionais. O desafio era educar o consumidor sobre os atributos únicos do produto enquanto reforçava sua origem islandesa combinada com a produção brasileira.",
+      "",
+      "A estratégia central foi traduzir os diferenciais técnicos (alta proteína, baixa gordura, clean label) em narrativas visuais compelentes que ressoassem com o consumidor consciente. Materiais foram criados para múltiplos canais enfatizando os benefícios do produto através de infográficos, fotografia em estilo de vida e arquitetura clara de mensagens que reforça a autoridade da marca no segmento wellness.",
+      "",
+      ""
+    ],
+    meta: [
+      { label: "Category", value: "Conteúdo de Marca" },
+      { label: "Client", value: "Moo" },
+      { label: "Type", value: "Design Estratégico, Conteúdo Visual, Desenvolvimento de peças criativas com IA" },
+      { label: "Field", value: "Design Gráfico" },
+      { label: "Year", value: "2026" },
+      { label: "Credits", value: "Art Direction, Design" }
+    ],
+    media: [
+      { src: "uploads/Reels_Lanc%CC%A7amento-moo-desnatado_1080X1920.mp4", file: "Reels_Lançamento-moo-desnatado_1080X1920.mp4", ratio: "9/16", kind: "Vídeo" },
+      { src: "uploads/02-bcb26b78.png", file: "02.png", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/03-10dd12ba.png", file: "03.png", ratio: "9/16", kind: "Imagem" }
+    ]
+  },
+  {
+    slug: "oxente-nordeste", title: "Oxente Meu Nordeste",
+    cats: ["CAMPANHAS"],
+    category: "CAMPANHAS", year: "2024",
+    video: "oxente-nordeste-capa.mp4",
+    cover: "uploads/animac%CC%A7a%CC%83o_mosaico.gif",
+    body: [
+      "Basta uma rápida pesquisa nos mecanismos de busca para identificar o Centro Luiz Gonzaga de Tradições Nordestinas, mais conhecido como Feira de São Cristóvão. O local foi estabelecido, com o intuito de ser um local reservado às expressões da cultura nordestina e ser um espaço destinado aos nordestinos para matarem a saudade de sua terra natal, entretanto tem perdido sua verdadeira essência. \n\nDessa forma, o seguinte projeto consiste no desenvolvimento de um sistema de comunicação para resgatar a perpetuação da tradição nordestina dentro da Feira de São Cristóvão, no Rio de Janeiro.",
+      "O sistema envolve a construção de uma narrativa e repertório de imagens que retratem a cultura nordestina. Dessa forma, contará com uma identidade visual que irá demonstrar a diversidade da tradição nordestina com intuito de conectar diretamente o público com a Feira de São Cristóvão.\nAlém disso, foram criados vídeos, por meio de colagens de imagens que retratam o nordeste, que serão projetados e que vão funcionar em ciclos permanentes na Praça dos Repentistas. Também, foi desenvolvido um canal no Instagram para contar a história da Feira e Região Nordeste, atrair os frequentadores e ajudar na divulgação do projeto.",
+      "",
+      "",
+      ""
+    ],
+    meta: [
+      { label: "Category", value: "Campanhas" },
+      { label: "Client", value: "Centro Luiz Gonzaga de Tradições Nordestinas" },
+      { label: "Type", value: "Identidade Visual, Sistema de Comunicação, Vídeo" },
+      { label: "Field", value: "Design Gráfico" },
+      { label: "Year", value: "2024" },
+      { label: "Credits", value: "Brand Strategy, Design, Motion" }
+    ],
+    media: [
+      { src: "uploads/animac%CC%A7a%CC%83ologo.gif", file: "animaçãologo.gif", ratio: "9/16", kind: "Animação" },
+      { src: "uploads/ingressos.jpg", file: "ingressos.jpg", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/Instagram.jpg", file: "Instagram.jpg", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/simulac%CC%A7a%CC%83o01_insta_story01_1.jpeg", file: "simulação01_insta_story01.jpeg", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/00.jpg", file: "00.jpg", ratio: "9/16", kind: "Imagem" },
+      { file: "oxente-nordeste-video-3.mp4", ratio: "9/16", kind: "Vídeo" }
+    ],
+    behance: "https://www.behance.net/gallery/192025911/Oxente-meu-nordeste",
+    quote: "“Origem sem clichê — era exatamente o pedido.”"
+  },
+  {
+    slug: "pascoa-bb-basico", title: "Campanha de Páscoa BB Básico",
+    cats: ["CAMPANHAS"],
+    category: "CAMPANHAS", year: "2024",
+    video: "pascoa-bb-basico-capa.mp4",
+    cover: "uploads/Capa.jpg",
+    body: [
+      "A bb básico é uma marca de roupas infantil criada em 2000 com o objetivo de trazer para o mercado um novo conceito de vestir crianças com a praticidade e o conforto de uma roupa básica com cores diferenciadas e com ótima relação custo x benefício. Tem como propósito resgatar o que significa ser criança e eternizar momentos. ",
+      "Para a campanha de divulgação da coleção de Páscoa 2024 foi estabelecido uma identidade visual que mistura a fantasia, brincadeira e a fofura que o coelhinho da páscoa comunica para os pequenos. Foram utilizados os elementos da estampa criada, com traços orgânicos e dentro das cores estabelecidas na estampa. Foram desenvolvidos catálogos, artes de lançamento, materiais de impressão e fotos dentro da temática.",
+      "",
+      "",
+      ""
+    ],
+    meta: [
+      { label: "Category", value: "Campanhas" },
+      { label: "Client", value: "bb básico" },
+      { label: "Type", value: "Campanha Sazonal, Identidade Visual, Catálogo" },
+      { label: "Field", value: "Design Gráfico · Publicidade · Moda" },
+      { label: "Year", value: "2024" },
+      { label: "Credits", value: "Art Direction, Design, Photography" }
+    ],
+    media: [
+      { src: "uploads/01.jpg", file: "01.jpg", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/02.jpg", file: "02.jpg", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/06.gif", file: "06.gif", ratio: "9/16", kind: "Animação" },
+      { src: "uploads/03-94c1371d.jpg", file: "03-94c1371d.jpg", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/04-d15cb631.jpg", file: "04-d15cb631.jpg", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/05.jpg", file: "05.jpg", ratio: "9/16", kind: "Imagem" }
+    ],
+    behance: "https://www.behance.net/gallery/192104895/Campanha-de-Pascoa",
+    quote: "“Sazonalidade com identidade própria, não com clipart.”"
+  },
+  {
+    slug: "pega-leve-chas", title: "Pega Leve Chás",
+    cover: "uploads/01-519a46e0.jpg",
+    cats: ["CAMPANHAS"],
+    category: "CAMPANHAS", year: "2024",
+    video: "pega-leve-chas-capa.mp4",
+    body: [
+      "Desenvolvimento de identidade visual completa para a marca Pega Leve Chás.",
+      "O escopo cobriu logotipo, rótulo, design de embalagem e sistema de comunicação visual.",
+      "Chá é uma categoria de prateleira lenta, com muito ruído visual e pouca diferenciação real — a identidade precisava resolver isso no ponto de venda.",
+      "Trabalhamos hierarquia clara no rótulo e um sistema que escala por sabor sem perder a leitura da marca.",
+      "A linha ganhou presença de prateleira sem depender de promessa funcional."
+    ],
+    meta: [
+      { label: "Category", value: "Campanhas" },
+      { label: "Client", value: "Pega Leve" },
+      { label: "Type", value: "Branding, Identidade Visual, Embalagem, Rótulo" },
+      { label: "Tools", value: "Illustrator, InDesign, Photoshop" },
+      { label: "Year", value: "2022" },
+      { label: "Credits", value: "Brand Strategy, Design" }
+    ],
+    media: [
+      { src: "uploads/01.png", file: "01.png", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/02-700f0164.png", file: "02.png", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/03-a38bfe56.png", file: "03.png", ratio: "9/16", kind: "Imagem" },
+      { file: "pega-leve-chas-image-2.jpg", kind: "Imagem" },
+      { src: "uploads/22.jpg", file: "22.jpg", ratio: "9/16", kind: "Imagem" },
+      { src: "uploads/08%20(1).jpg", file: "08 (1).jpg", ratio: "9/16", kind: "Imagem" }
+    ],
+    behance: "https://www.behance.net/gallery/148619837/Pega-Leve-chas",
+    quote: "“Presença de prateleira sem apelo funcional.”"
+  }
+];
+
+function RES(p) {
+  if (!p) return p;
+  var m = (typeof window !== "undefined" && window.__resources) || null;
+  if (!m) return p;
+  return m[p] || m[decodeURI(p)] || m[encodeURI(decodeURI(p))] || p;
+}
+class Component extends DCLogic {
+  state = { page: "home", idx: 0, scrolled: false, filter: "TUDO" };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const s = window.scrollY > 24;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    var map = {};
+    document.querySelectorAll("#__assetmap [data-bkey]").forEach(function (el) {
+      var real = el.getAttribute("src");
+      if (real) map[el.getAttribute("data-bkey")] = real;
+    });
+    if (Object.keys(map).length) { window.__resources = map; this.forceUpdate(); }
+    this._silence();
+    this._mute = (e) => {
+      const v = e.target;
+      if (v && v.tagName === "VIDEO") { v.muted = true; v.defaultMuted = true; v.volume = 0; }
+      if (v && v.tagName === "VIDEO" && e.type === "loadedmetadata" && v.paused) this._schedule();
+    };
+    ["play", "playing", "loadedmetadata", "volumechange", "canplay"].forEach((ev) =>
+      document.addEventListener(ev, this._mute, true)
+    );
+    this._muteTimer = setInterval(() => this._silence(), 1000);
+    this._kickFn = () => this._kick();
+    ["touchstart", "pointerdown", "visibilitychange"].forEach((ev) =>
+      document.addEventListener(ev, this._kickFn, { passive: true })
+    );
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this._onScroll);
+    clearInterval(this._muteTimer);
+
+    ["touchstart", "pointerdown", "visibilitychange"].forEach((ev) =>
+      document.removeEventListener(ev, this._kickFn)
+    );
+    ["play", "playing", "loadedmetadata", "volumechange", "canplay"].forEach((ev) =>
+      document.removeEventListener(ev, this._mute, true)
+    );
+  }
+
+  nav(page, idx) {
+    return (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      this.setState({ page, idx: idx == null ? this.state.idx : idx });
+      if (typeof window !== "undefined") window.scrollTo(0, 0);
+    };
+  }
+
+  _silence() {
+    requestAnimationFrame(() => {
+      document.querySelectorAll("video").forEach(v => {
+        if (v.dataset.src && v.getAttribute("src") !== v.dataset.src) v.src = v.dataset.src;
+        v.muted = true; v.defaultMuted = true; v.volume = 0; v.removeAttribute("controls");
+        v.setAttribute("muted", "");
+        v.setAttribute("playsinline", "");
+        v.setAttribute("webkit-playsinline", "");
+        v.setAttribute("preload", "auto");
+        v.setAttribute("disableremoteplayback", "");
+        v.loop = true;
+      });
+      this._schedule();
+    });
+  }
+  _schedule() {
+    const vh = window.innerHeight || 800;
+    const limit = window.innerWidth < 860 ? 2 : 12;
+    const list = [];
+    document.querySelectorAll("video").forEach(v => {
+      const r = v.getBoundingClientRect();
+      const vis = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0));
+      list.push({ v, vis });
+    });
+    list.sort((a, b) => b.vis - a.vis);
+    list.forEach((it, i) => {
+      const on = it.vis > 0 && i < limit;
+      it.v.muted = true;
+      if (on) { if (it.v.paused) it.v.play && it.v.play().catch(() => {}); }
+      else if (!it.v.paused) it.v.pause();
+    });
+  }
+  _kick() { this._schedule(); }
+  componentDidUpdate() { this._silence(); }
+  renderVals() {
+    const { page, idx } = this.state;
+    const current = PROJECTS[idx];
+    const prev = PROJECTS[(idx - 1 + PROJECTS.length) % PROJECTS.length];
+    const next = PROJECTS[(idx + 1) % PROJECTS.length];
+    return {
+      isHome: page === "home",
+      isAbout: page === "about",
+      isContact: page === "contact",
+      isProject: page === "project",
+      goHome: this.nav("home"),
+      goAbout: this.nav("about"),
+      goContact: this.nav("contact"),
+      goWork: (e) => {
+        if (e && e.preventDefault) e.preventDefault();
+        if (this.state.page !== "home") { this.setState({ page: "home" }); setTimeout(() => { const el = document.getElementById("work"); if (el) window.scrollTo(0, el.offsetTop - 80); }, 60); }
+        else { const el = document.getElementById("work"); if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: "smooth" }); }
+      },
+      headerBg: this.state.scrolled ? "rgba(255,255,255,.96)" : "rgba(255,255,255,.82)",
+      headerShadow: this.state.scrolled ? "0 1px 18px rgba(0,0,0,.06)" : "0 0 0 rgba(0,0,0,0)",
+      categories: CATEGORIES.map((c) => ({
+        label: c,
+        bg: this.state.filter === c ? "#1a1a1a" : "#ffffff",
+        fg: this.state.filter === c ? "#ffffff" : "#999999",
+        bc: this.state.filter === c ? "#1a1a1a" : "#e8e8e8",
+        pick: (ev) => { if (ev && ev.preventDefault) ev.preventDefault(); this.setState({ filter: c }); }
+      })),
+      projects: PROJECTS
+        .map((p, i) => ({ ...p, open: this.nav("project", i) }))
+        .filter((p) => this.state.filter === "TUDO" || p.cats.indexOf(this.state.filter) !== -1)
+        .map((p, i) => ({ ...p, delay: (i % 4) * 0.09 + "s", hasCover: !!p.cover && !/\.(mp4|webm|mov)$/i.test(p.cover), hasCoverVid: !!p.cover && /\.(mp4|webm|mov)$/i.test(p.cover), noCover: !p.cover, cover: RES(p.cover), coverBg: p.cover ? "url('" + RES(p.cover) + "')" : "none" })),
+      current: { ...current, media: current.media.map((m, i) => ({ ...m, delay: (i * 0.14).toFixed(2) + "s", ratio: m.ratio || "9/16", hasSrc: !!m.src, noSrc: !m.src, isVid: /\.(mp4|webm|mov)$/i.test(m.src || ""), isImg: !!m.src && !/\.(mp4|webm|mov)$/i.test(m.src), src: RES(m.src), bg: m.src ? "url('" + RES(m.src) + "')" : "none" })) },
+      hasBehance: !!current.behance,
+      behanceUrl: current.behance || "#",
+      prevTitle: prev.title,
+      nextTitle: next.title,
+      goPrev: this.nav("project", (idx - 1 + PROJECTS.length) % PROJECTS.length),
+      goNext: this.nav("project", (idx + 1) % PROJECTS.length)
+    };
+  }
+}
+</script>
+</body>
+</html>
